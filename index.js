@@ -117,3 +117,27 @@ buttons.forEach((button) => {
     updateDisplay();
   });
 });
+
+function clickButton(keyboardValue) {
+  keyboardValue = keyboardValue.toLowerCase();
+  if (keyboardValue === 'enter') keyboardValue = '=';
+
+  let keyboardToButton = {
+    delete: 'clear',
+    '~': 'sign',
+    '=': 'equals',
+    '.': 'decimal',
+  };
+  if (keyboardValue in keyboardToButton) {
+    keyboardValue = keyboardToButton[keyboardValue];
+  }
+
+  let button = document.querySelector(
+    `.calculator__button[data-value="${keyboardValue}"]`
+  );
+  if (button) button.click();
+}
+
+document.body.addEventListener('keydown', (e) => {
+  clickButton(e.key);
+});
