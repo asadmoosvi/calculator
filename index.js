@@ -88,8 +88,9 @@ buttons.forEach((button) => {
         operandB = '';
       } else if (button.dataset.value === 'decimal') {
         if (!operandB) {
+          if (operation) operandB = '0.';
           //if decimal point is not already added then add it
-          if (operandA.indexOf('.') === -1) {
+          else if (operandA.indexOf('.') === -1) {
             operandA += '.';
           }
         } else {
