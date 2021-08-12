@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+:root {
+  --primary-clr: #151515;
+  --secondary-clr: #ededed;
+  --calc-section-bg: #171717;
+  --font: 'Lato', sans-serif;
+  --shadow: 0 0 2px rgba(255, 255, 255, 0.2);
+}
+.page {
+  margin: 0;
+  background-color: var(--primary-clr);
+  font-family: var(--font);
+  font-size: 1.1rem;
+  color: var(--secondary-clr);
+}
+
+.page__container {
+  padding: 2rem;
+  max-width: 64rem;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.calculator {
+  width: 40rem;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.calculator__display {
+  min-height: 25vh;
+  background-color: var(--calc-section-bg);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.calculator__text {
+  text-align: right;
+  font-size: 2.6em;
+  margin: 0;
+}
+.calculator__buttons {
+  min-height: 50vh;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: var(--calc-section-bg);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.calculator__button {
+  all: unset;
+  background-color: #262626;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 300ms ease-in-out, transform 100ms ease-in-out;
+}
+
+.calculator__button:hover,
+.calculator__button:focus {
+  background-color: #404040;
+}
+
+.calculator__button:active {
+  transform: scale(0.94);
+}
+
+@media screen and (max-width: 768px) {
+  .page__container {
+    padding: 1rem;
+  }
+}
