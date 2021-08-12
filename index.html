@@ -7,6 +7,7 @@
       src="https://kit.fontawesome.com/66d11e8a18.js"
       crossorigin="anonymous"
     ></script>
+    <script src="index.js" defer></script>
     <link rel="stylesheet" href="style.css" />
     <title>Calculator</title>
   </head>
@@ -17,43 +18,105 @@
           <p class="calculator__text"></p>
         </div>
         <div class="calculator__buttons">
-          <button class="calculator__button">
+          <button
+            data-type="control"
+            data-value="clear"
+            class="calculator__button"
+          >
             <i class="fas fa-trash"></i>
           </button>
-          <button class="calculator__button">
+          <button
+            data-type="control"
+            data-value="backspace"
+            class="calculator__button"
+          >
             <i class="fas fa-backspace"></i>
           </button>
-          <button class="calculator__button">
+          <button
+            data-type="operation"
+            data-value="%"
+            class="calculator__button"
+          >
             <i class="fas fa-percentage"></i>
           </button>
-          <button class="calculator__button">
+          <button
+            data-type="operation"
+            data-value="/"
+            class="calculator__button"
+          >
             <i class="fas fa-divide"></i>
           </button>
-          <button class="calculator__button">7</button>
-          <button class="calculator__button">8</button>
-          <button class="calculator__button">9</button>
-          <button class="calculator__button">
+          <button data-type="number" data-value="7" class="calculator__button">
+            7
+          </button>
+          <button data-type="number" data-value="8" class="calculator__button">
+            8
+          </button>
+          <button data-type="number" data-value="9" class="calculator__button">
+            9
+          </button>
+          <button
+            data-type="operation"
+            data-value="*"
+            class="calculator__button"
+          >
             <i class="fas fa-times"></i>
           </button>
-          <button class="calculator__button">4</button>
-          <button class="calculator__button">5</button>
-          <button class="calculator__button">6</button>
-          <button class="calculator__button">
+          <button data-type="number" data-value="4" class="calculator__button">
+            4
+          </button>
+          <button data-type="number" data-value="5" class="calculator__button">
+            5
+          </button>
+          <button data-type="number" data-value="6" class="calculator__button">
+            6
+          </button>
+          <button
+            data-type="operation"
+            data-value="-"
+            class="calculator__button"
+          >
             <i class="fas fa-minus"></i>
           </button>
-          <button class="calculator__button">1</button>
-          <button class="calculator__button">2</button>
-          <button class="calculator__button">3</button>
-          <button class="calculator__button">
+          <button data-type="number" data-value="1" class="calculator__button">
+            1
+          </button>
+          <button data-type="number" data-value="2" class="calculator__button">
+            2
+          </button>
+          <button data-type="number" data-value="3" class="calculator__button">
+            3
+          </button>
+          <button
+            data-type="operation"
+            data-value="+"
+            class="calculator__button"
+          >
             <i class="fas fa-plus"></i>
           </button>
-          <button class="calculator__button">.</button>
-          <button class="calculator__button">0</button>
-          <button class="calculator__button">
+          <button
+            data-type="control"
+            data-value="decimal"
+            class="calculator__button"
+          >
+            .
+          </button>
+          <button data-type="number" data-value="0" class="calculator__button">
+            0
+          </button>
+          <button
+            data-type="control"
+            data-value="sign"
+            class="calculator__button"
+          >
             <i class="fas fa-plus"></i> <span>/</span>
             <i class="fas fa-minus"></i>
           </button>
-          <button class="calculator__button">
+          <button
+            data-type="control"
+            data-value="equals"
+            class="calculator__button"
+          >
             <i class="fas fa-equals"></i>
           </button>
         </div>
