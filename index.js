@@ -45,3 +45,74 @@ function operate(operator, a, b) {
   }
   return result;
 }
+
+/* main code */
+const display = document.querySelector('.calculator__text');
+const buttons = document.querySelectorAll('.calculator__button');
+let currentDisplay = '';
+let operandA = '';
+let operation = '';
+let operandB = '';
+
+function updateDisplay() {
+  display.textContent = operandA + operation + operandB;
+}
+
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    if (button.dataset.type === 'number') {
+      if (!operation) {
+        operandA += button.dataset.value;
+      } else {
+        operandB += button.dataset.value;
+      }
+    } else if (button.dataset.type === 'operation') {
+      //if an operation is not already supplied
+      if (!operation) {
+        operation = button.dataset.value;
+      } else {
+        operandA = String(operate(operation, +operandA, +operandB));
+        operation = button.dataset.value;
+        operandB = '';
+      }
+    } else if (button.dataset.type === 'control') {
+      if (button.dataset.value === 'equals') {
+        if (operandB) {
+          operandA = String(operate(operation, +operandA, +operandB));
+          operation = '';
+          operandB = '';
+        }
+      } else if (button.dataset.value === 'clear') {
+        operandA = '';
+        operation = '';
+        operandB = '';
+      } else if (button.dataset.value === 'decimal') {
+        if (!operandB) {
+          //if decimal point is not already added then add it
+          if (operandA.indexOf('.') === -1) {
+            operandA += '.';
+          }
+        } else {
+          if (operandB.indexOf('.') === -1) {
+            operandB += '.';
+          }
+        }
+      } else if (button.dataset.value === 'sign') {
+        if (!operandB) {
+          if (operandA) operandA = String(+operandA * -1);
+        } else {
+          operandB = String(+operandB * -1);
+        }
+      } else if (button.dataset.value === 'backspace') {
+        if (operandB) {
+          operandB = operandB.slice(0, -1);
+        } else if (operation) {
+          operation = '';
+        } else if (operandA) {
+          operandA = operandA.slice(0, -1);
+        }
+      }
+    }
+    updateDisplay();
+  });
+});
