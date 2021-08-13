@@ -131,6 +131,7 @@ function clickButton(keyboardValue) {
     '~': 'sign',
     '=': 'equals',
     '.': 'decimal',
+    '*': 'x',
   };
   if (keyboardValue in keyboardToButton) {
     keyboardValue = keyboardToButton[keyboardValue];
