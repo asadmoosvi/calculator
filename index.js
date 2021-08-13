@@ -71,11 +71,13 @@ buttons.forEach((button) => {
       if (!operation) {
         operation = button.dataset.value;
       } else {
-        operandA = String(
-          operate(operation === 'x' ? '*' : operation, +operandA, +operandB)
-        );
-        operation = button.dataset.value;
-        operandB = '';
+        if (operandB) {
+          operandA = String(
+            operate(operation === 'x' ? '*' : operation, +operandA, +operandB)
+          );
+          operation = button.dataset.value;
+          operandB = '';
+        }
       }
     } else if (button.dataset.type === 'control') {
       if (button.dataset.value === 'equals') {
