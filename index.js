@@ -73,7 +73,11 @@ buttons.forEach((button) => {
       } else {
         if (operandB) {
           operandA = String(
-            operate(operation === 'x' ? '*' : operation, +operandA, +operandB)
+            +operate(
+              operation === 'x' ? '*' : operation,
+              +operandA,
+              +operandB
+            ).toFixed(2)
           );
           operation = button.dataset.value;
           operandB = '';
@@ -83,7 +87,11 @@ buttons.forEach((button) => {
       if (button.dataset.value === 'equals') {
         if (operandB) {
           operandA = String(
-            operate(operation === 'x' ? '*' : operation, +operandA, +operandB)
+            +operate(
+              operation === 'x' ? '*' : operation,
+              +operandA,
+              +operandB
+            ).toFixed(2)
           );
           operation = '';
           operandB = '';
